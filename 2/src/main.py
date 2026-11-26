@@ -4,12 +4,16 @@ from matplotlib.figure import Figure
 import matplotlib.backends.backend_tkagg as tkagg
 import tkinter as tk
 from tkinter import ttk
+import os
+
+dir = os.path.dirname(__file__)
+path = os.path.join(dir, '../data/data.csv')
 
 root = tk.Tk()
 root.title("Grafice")
 root.geometry("1200x800")
 
-data = pd.read_csv("../data/data.csv")
+data = pd.read_csv(path)
 
 tabs = ttk.Notebook(root)
 tabs.pack(fill=tk.BOTH, expand=True, padx=10, pady=10)
